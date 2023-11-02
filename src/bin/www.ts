@@ -5,7 +5,6 @@
  */
 
 import app from "../app";
-import debug from "debug";
 import http from "http";
 
 /**
@@ -81,6 +80,6 @@ function onError(error: { syscall: string; code: unknown }) {
 
 function onListening() {
   const addr = server.address();
-  const bind = typeof addr === "string" ? "pipe " + addr : "port " + addr.port;
-  debug("Listening on " + bind);
+  const bind = typeof addr === "string" ? "pipe " + addr : "port " + addr?.port;
+  console.log("Listening on " + bind);
 }

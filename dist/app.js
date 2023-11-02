@@ -19,4 +19,4 @@ app.use(express_1.default.static(path_1.default.join(__dirname, "public")));
 app.use("/", index_1.default);
 app.use("/users", users_1.default);
 app.use("/mobs", mobs_1.default);
-module.exports = app;
+exports.default = app;

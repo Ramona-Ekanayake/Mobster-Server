@@ -1,9 +1,15 @@
 import express from "express";
 const router = express.Router();
 
-/* GET mobs listing. */
+type Mob = {
+  name: string;
+  id: number;
+};
+
+const mobs: Mob[] = [{ name: "Rasor", id: 1 }];
+
 router.get("/", function (req, res) {
-  res.send("respond with a resource");
+  res.json(mobs);
 });
 
 export default router;
