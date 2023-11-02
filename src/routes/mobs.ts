@@ -12,4 +12,11 @@ router.get("/", function (req, res) {
   res.json(mobs);
 });
 
+router.post("/", function (req, res) {
+  const body = req.body;
+  mobs.push(body);
+  res.status(201).json(body);
+  console.log(body);
+});
+
 export default router;

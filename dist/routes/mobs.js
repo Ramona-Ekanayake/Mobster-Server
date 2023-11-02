@@ -9,4 +9,10 @@ const mobs = [{ name: "Rasor", id: 1 }];
 router.get("/", function (req, res) {
     res.json(mobs);
 });
+router.post("/", function (req, res) {
+    const body = req.body;
+    mobs.push(body);
+    res.status(201).json(body);
+    console.log(body);
+});
 exports.default = router;
