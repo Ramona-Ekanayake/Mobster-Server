@@ -15,8 +15,7 @@ router.get("/", function (req, res) {
 router.post("/", function (req, res) {
   const body = req.body;
   mobs.push(body);
-  res.status(201).json(body);
-  console.log(body);
+  res.status(201).json(mobs);
 });
 
 export default router;
