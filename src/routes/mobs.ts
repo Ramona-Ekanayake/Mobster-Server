@@ -6,14 +6,14 @@ type Mob = {
   id: number;
 };
 
-const mobs: Mob[] = [{ name: "Rasor", id: 1 }];
+const mobs: Mob[] = [{ name: "Rasor", id: Date.now() }];
 
 router.get("/", function (req, res) {
   res.json(mobs);
 });
 
 router.post("/", function (req, res) {
-  const body = req.body;
+  const body = { name: req.body.name, id: Date.now() };
   mobs.push(body);
   res.status(201).json(mobs);
 });
