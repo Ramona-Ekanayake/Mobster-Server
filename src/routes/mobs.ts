@@ -15,7 +15,7 @@ router.get("/", function (req, res) {
 router.post("/", function (req, res) {
   const body = { name: req.body.name, id: Date.now() };
   mobs.push(body);
-  res.status(201).json(mobs);
+  res.status(201).json(body);
 });
 
 export default router;
